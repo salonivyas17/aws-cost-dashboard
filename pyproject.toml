@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aws-cost-dashboard"
+version = "1.0.0"
+description = "AWS Cost Analysis Dashboard for Executive Presentations"
+authors = [{name = "AWS Cost Management Team"}]
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "dash>=2.14.0",
+    "plotly>=5.17.0",
+    "pandas>=2.1.0",
+    "numpy>=1.24.0",
+    "openpyxl>=3.1.0",
+    "xlrd>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=22.0.0",
+    "flake8>=5.0.0",
+]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"] 
