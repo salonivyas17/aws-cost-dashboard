@@ -128,6 +128,7 @@ app.index_string = '''
                     <div id="account-cost-chart"></div>
                 </div>
                 
+                
                 <div class="chart-container">
                     <h3>Cost Projection Analysis</h3>
                     <div id="projection-chart"></div>
