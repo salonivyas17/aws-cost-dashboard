@@ -56,12 +56,12 @@ aws_cost/
 ├── app.py                 # Main dashboard application
 ├── requirements.txt       # Python dependencies
 ├── README.md             # This file
-└── final_all_combined_costs.xlsx  # Your cost data
+└── cleaned_final_combined_costs.xlsx  # Your cost data
 ```
 
 ## 🔧 Data Requirements
 
-The dashboard expects an Excel file named `final_all_combined_costs.xlsx` with:
+The dashboard expects an Excel file named `cleaned_final_combined_costs.xlsx` with:
 - Date column (for time-based analysis)
 - Account column (for account-wise analysis)
 - Cost column (for financial calculations)

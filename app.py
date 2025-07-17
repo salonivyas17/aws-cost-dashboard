@@ -85,12 +85,12 @@ app.index_string = '''
     <body>
         <div id="react-entry-point">
             <div class="header">
-                <h1>🚀 AWS Cost Analysis Dashboard</h1>
+                <h1>AWS Cost Analysis Dashboard</h1>
                 <p>Strategic Cost Management & Savings Analysis</p>
             </div>
             <div class="container">
                 <div class="card">
-                    <h2>📊 Executive Summary</h2>
+                    <h2>Executive Summary</h2>
                     <p>This dashboard analyzes AWS costs from December 2024 to May 2025 and projects the financial impact of account deletion decisions.</p>
                 </div>
                 
@@ -114,27 +114,27 @@ app.index_string = '''
                 </div>
                 
                 <div class="savings-highlight">
-                    <h2>💰 Cost Savings Impact</h2>
+                    <h2>Cost Savings Impact</h2>
                     <p>By deleting unused AWS accounts, we project significant annual cost savings that directly impact our bottom line.</p>
                 </div>
                 
                 <div class="chart-container">
-                    <h3>📈 Monthly Cost Trend</h3>
+                    <h3>Monthly Cost Trend</h3>
                     <div id="monthly-trend-chart"></div>
                 </div>
                 
                 <div class="chart-container">
-                    <h3>🏢 Account-wise Cost Distribution</h3>
+                    <h3>Account-wise Cost Distribution</h3>
                     <div id="account-cost-chart"></div>
                 </div>
                 
                 <div class="chart-container">
-                    <h3>💡 Cost Projection Analysis</h3>
+                    <h3>Cost Projection Analysis</h3>
                     <div id="projection-chart"></div>
                 </div>
                 
                 <div class="card">
-                    <h3>🎯 Key Insights</h3>
+                    <h3>Key Insights</h3>
                     <ul>
                         <li><strong>Cost Trend:</strong> Analysis shows consistent monthly spending patterns</li>
                         <li><strong>Account Distribution:</strong> Some accounts contribute significantly more to overall costs</li>
@@ -158,7 +158,7 @@ def load_and_process_data():
     """Load and process the Excel data"""
     try:
         # Read the Excel file
-        df = pd.read_excel('final_all_combined_costs.xlsx')
+        df = pd.read_excel('cleaned_final_combined_costs.xlsx')
         
         # Display basic info about the data
         print(f"Data shape: {df.shape}")
@@ -362,13 +362,13 @@ projection_fig = create_projection_chart(metrics)
 # Layout
 app.layout = html.Div([
     html.Div([
-        html.H1("🚀 AWS Cost Analysis Dashboard", className="header-title"),
+        html.H1("AWS Cost Analysis Dashboard", className="header-title"),
         html.P("Strategic Cost Management & Savings Analysis", className="header-subtitle")
     ], className="header"),
     
     html.Div([
         html.Div([
-            html.H2("📊 Executive Summary"),
+            html.H2("Executive Summary"),
             html.P("This dashboard analyzes AWS costs from December 2024 to May 2025 and projects the financial impact of account deletion decisions.")
         ], className="card"),
         
@@ -392,27 +392,27 @@ app.layout = html.Div([
         ], style={"display": "flex", "flexWrap": "wrap", "justifyContent": "space-between"}),
         
         html.Div([
-            html.H2("💰 Cost Savings Impact"),
+            html.H2(" Cost Savings Impact"),
             html.P("By deleting unused AWS accounts, we project significant annual cost savings that directly impact our bottom line.")
         ], className="savings-highlight"),
         
         html.Div([
-            html.H3("📈 Monthly Cost Trend"),
+            html.H3("Monthly Cost Trend"),
             dcc.Graph(figure=monthly_trend_fig, id="monthly-trend-chart")
         ], className="chart-container"),
         
         html.Div([
-            html.H3("🏢 Account-wise Cost Distribution"),
+            html.H3("Account-wise Cost Distribution"),
             dcc.Graph(figure=account_cost_fig, id="account-cost-chart")
         ], className="chart-container"),
         
         html.Div([
-            html.H3("💡 Cost Projection Analysis"),
+            html.H3("Cost Projection Analysis"),
             dcc.Graph(figure=projection_fig, id="projection-chart")
         ], className="chart-container"),
         
         html.Div([
-            html.H3("🎯 Key Insights"),
+            html.H3("Key Insights"),
             html.Ul([
                 html.Li("Cost Trend: Analysis shows consistent monthly spending patterns"),
                 html.Li("Account Distribution: Some accounts contribute significantly more to overall costs"),
@@ -424,4 +424,4 @@ app.layout = html.Div([
 ])
 
 if __name__ == '__main__':
-    app.run_server(debug=True, host='0.0.0.0', port=8080) 
+    app.run(debug=True, host='0.0.0.0', port=8080) 
